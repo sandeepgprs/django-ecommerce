@@ -62,7 +62,7 @@
               Remove from cart
             </a>
 
-            {% if object.amazon_url %}
+            {% if object.amazon_url != 'NA' %}
                 <a href="{{ object.amazon_url }}" class="btn btn-primary btn-md my-2 p">
                       Buy this directly from Amazon
                 </a>
