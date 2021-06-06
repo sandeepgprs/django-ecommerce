@@ -47,6 +47,7 @@ class Migration(migrations.Migration):
                 ('label', models.CharField(choices=[('P', 'primary'), ('S', 'secondary'), ('D', 'danger')], max_length=1)),
                 ('slug', models.SlugField()),
                 ('description', models.TextField()),
+                ('amazon_url', models.TextField()),
                 ('image', models.ImageField(upload_to='')),
             ],
         ),

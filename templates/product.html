@@ -9,11 +9,11 @@
       <div class="row wow fadeIn">
 
         <!--Grid column-->
-        <div class="col-md-6 mb-4">
+<!--        <div class="col-md-6 mb-4">-->
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">
+<!--          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">-->
 
-        </div>
+<!--        </div>-->
         <!--Grid column-->
 
         <!--Grid column-->
@@ -31,15 +31,17 @@
             <p class="lead">
               {% if object.discount_price %}
               <span class="mr-1">
-                <del>${{ object.price }}</del>
+                <del>Rs.{{ object.price }}</del>
               </span>
-              <span>${{ object.discount_price }}</span>
+              <span>Rs.{{ object.discount_price }}</span>
               {% else %}
-              <span>${{ object.price }}</span>
+              <span>Rs.{{ object.price }}</span>
               {% endif %}
             </p>
 
             <p class="lead font-weight-bold">Description</p>
+
+            <img src="/media/{{ object.image }}">
 
             <p>{{ object.description }}</p>
 
@@ -60,6 +62,12 @@
               Remove from cart
             </a>
 
+            {% if object.amazon_url %}
+                <a href="{{ object.amazon_url }}" class="btn btn-primary btn-md my-2 p">
+                      Buy this directly from Amazon
+                </a>
+            {% endif %}
+
           </div>
           <!--Content-->
 
@@ -75,15 +83,15 @@
       <div class="row d-flex justify-content-center wow fadeIn">
 
         <!--Grid column-->
-        <div class="col-md-6 text-center">
+<!--        <div class="col-md-6 text-center">-->
 
-          <h4 class="my-4 h4">Additional information</h4>
+<!--          <h4 class="my-4 h4">Additional information</h4>-->
 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit
-            voluptates,
-            quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+<!--          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit-->
+<!--            voluptates,-->
+<!--            quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>-->
 
-        </div>
+<!--        </div>-->
         <!--Grid column-->
 
       </div>
@@ -93,27 +101,27 @@
       <div class="row wow fadeIn">
 
         <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4">
+<!--        <div class="col-lg-4 col-md-12 mb-4">-->
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
+<!--          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">-->
 
-        </div>
-        <!--Grid column-->
+<!--        </div>-->
+<!--        &lt;!&ndash;Grid column&ndash;&gt;-->
 
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
+<!--        &lt;!&ndash;Grid column&ndash;&gt;-->
+<!--        <div class="col-lg-4 col-md-6 mb-4">-->
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
+<!--          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">-->
 
-        </div>
-        <!--Grid column-->
+<!--        </div>-->
+<!--        &lt;!&ndash;Grid column&ndash;&gt;-->
 
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
+<!--        &lt;!&ndash;Grid column&ndash;&gt;-->
+<!--        <div class="col-lg-4 col-md-6 mb-4">-->
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
+<!--          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">-->
 
-        </div>
+<!--        </div>-->
         <!--Grid column-->
 
       </div>

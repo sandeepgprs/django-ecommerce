@@ -12,7 +12,7 @@
             <form method="POST" class="card-body">
               {% csrf_token %}
 
-              <h3>Shipping address</h3>
+              <h5>Please provide your details here,we will contact you soon regarding the order</h5>
 
               <div class='hideable_shipping_form'>
 
@@ -24,6 +24,11 @@
                 <div class="md-form mb-5">
                   <input type='text' placeholder='Apartment or suite' id='shipping_address2' name='shipping_address2' class='form-control' />
                   <label for="shipping_address2" class="">Address 2 (optional)</label>
+                </div>
+
+                <div class="md-form mb-5">
+                  <input type='text' placeholder='10 Digit Phone Number' id='phone_number' name='phone_number' class='form-control' required />
+                  <label for="phone_number" class="">Phone Number</label>
                 </div>
 
                 <div class="row">
@@ -76,6 +81,11 @@
                   <label for="billing_address2" class="">Address 2 (optional)</label>
                 </div>
 
+                <div class="md-form mb-5">
+                  <input type='text' placeholder='10 Digit Phone Number' id='billing_phone_number' name='billing_phone_number' class='form-control' />
+                  <label for="billing_phone_number" class="">Phone Number</label>
+                </div>
+
                 <div class="row">
                   <div class="col-lg-4 col-md-12 mb-4">
                     <label for="country">Country</label>
@@ -113,16 +123,20 @@
               <h3>Payment option</h3>
 
               <div class="d-block my-3">
-                {% for value, name in form.fields.payment_option.choices %}
-                <div class="custom-control custom-radio">
-                  <input id="{{ name }}" name="payment_option" value="{{ value }}" type="radio" class="custom-control-input" required>
-                  <label class="custom-control-label" for="{{ name }}">{{ name }}</label>
-                </div>
-                {% endfor %}
+                  <div class="custom-control custom-radio">
+                  <input id="Stripe" name="payment_option" value="S" type="radio" class="custom-control-input" required>
+                  <label class="custom-control-label" for="Stripe">COD</label>
+                  </div>
+<!--                {% for value, name in form.fields.payment_option.choices %}-->
+<!--                <div class="custom-control custom-radio">-->
+<!--                  <input id="{{ name }}" name="payment_option" value="{{ value }}" type="radio" class="custom-control-input" required>-->
+<!--                  <label class="custom-control-label" for="{{ name }}">{{ name }}</label>-->
+<!--                </div>-->
+<!--                {% endfor %}-->
               </div>
 
               <hr class="mb-4">
-              <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm Order</button>
 
             </form>
 

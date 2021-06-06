@@ -76,7 +76,7 @@ class CheckoutView(View):
         try:
             order = Order.objects.get(user=self.request.user, ordered=False)
             if form.is_valid():
-
+                print("Form is valid")
                 use_default_shipping = form.cleaned_data.get(
                     'use_default_shipping')
                 if use_default_shipping:
@@ -114,16 +114,18 @@ class CheckoutView(View):
                             address_type='S'
                         )
                         shipping_address.save()
-
+                        print("Saved Shipping Address")
                         order.shipping_address = shipping_address
+                        order.ordered=1
                         order.save()
-
+                        print("Saved Order")
                         set_default_shipping = form.cleaned_data.get(
                             'set_default_shipping')
                         if set_default_shipping:
                             shipping_address.default = True
                             shipping_address.save()
-
+                        messages.success(self.request, "Order Confirmed, Our team will soon contact you for delivery and payment related details!")
+                        return redirect("/")
                     else:
                         messages.info(
                             self.request, "Please fill in the required shipping address fields")
@@ -267,14 +269,14 @@ class PaymentView(View):
                     # charge the customer because we cannot charge the token more than once
                     charge = stripe.Charge.create(
                         amount=amount,  # cents
-                        currency="usd",
+                        currency="inr",
                         customer=userprofile.stripe_customer_id
                     )
                 else:
                     # charge once off on the token
                     charge = stripe.Charge.create(
                         amount=amount,  # cents
-                        currency="usd",
+                        currency="inr",
                         source=token
                     )
 
